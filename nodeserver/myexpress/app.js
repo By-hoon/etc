@@ -8,6 +8,7 @@ var router = express.Router();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var session = require('express-session');
+var mongoose = require('mongoose');
 
 var app = express();
 
