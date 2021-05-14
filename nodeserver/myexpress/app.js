@@ -39,7 +39,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-
+  stroe: MongoStore,
   cookie:{maxAge:(3.6e+6)*24}
 }));
 
