@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var session = require('express-session');
 var mongoose = require('mongoose');
+var MongoStore = require('connect-mongo');
 
 var app = express();
 
@@ -29,11 +30,17 @@ app.use('/users', usersRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
+mongoose.connect
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+
+  cookie:{maxAge:(3.6e+6)*24}
 }));
 
 // error handler
@@ -47,9 +54,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.use(function(req, res, next){
-  res.redirect('/public/index.html');
-})
 
 
 module.exports = app;
