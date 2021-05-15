@@ -4,11 +4,21 @@
   width:100%;
   height:100vh;
 }
+.mapshadow{
+  position:absolute;
+  top:0px;right:0px;
+  width:100%;
+  height:100vh;
+  z-index: 1;
+  box-shadow: 
+  0 0 0 3px rgba(71, 154, 191, 0.1) inset,
+  0 0 0 10000px rgba(0,0,0,0.1) inset;
+}
 #nav{
   position:absolute;
   top:50px; right:0px;
   bottom:0px;
-  z-index: 1;
+  z-index: 2;
   background-color: #dcdde1;
 }
 
@@ -45,6 +55,9 @@
   transition: all 0.3s ease;
   overflow:hidden;
   z-index:1;
+  box-shadow:   
+  0 0 0 0px rgba(71, 154, 191, 0.1) inset,
+  0 0 0 100px rgba(255, 255, 255, 0.774) inset;
 }
 .menuSubBtn:visited{color: #2c3e50;} 
 .menuSubBtn:link { text-decoration: none; 
@@ -66,6 +79,9 @@
   transition: all 0.3s ease;
   overflow:hidden;
   z-index:1;
+  box-shadow:   
+  0 0 0 0px rgba(71, 154, 191, 0.1) inset,
+  0 0 0 100px rgba(255, 255, 255, 0.774) inset;
 }
 .stop{
   display: none;
@@ -74,7 +90,7 @@
 
 .contentBox{
   position:absolute;
-  z-index: 2;
+  z-index: 50;
   width:500px; height:500px;
   left: 100px; top: 50px;
   background-color: #dcdde1;
@@ -82,7 +98,7 @@
 }
 #addimg{
   position:absolute;
-  z-index: 2;
+  z-index: 50;
 }
 #addimg label { 
   display: inline-block; 

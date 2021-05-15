@@ -259,9 +259,11 @@ function displayArea(area) {
 
 //----마커 추가 부분----------------------------------------------------------
 const stopBtn = document.querySelector(".stopBtn");
+const mapShadow = document.querySelector(".mapsh");
 let markerLat = [];
 
 const MARKERLAT_LS = 'markerLat'
+const MAPSHADOW_LS = 'mapshadow'
 const STOPBTN_LS = 'stop';
 
 //불러온 값으로 마커 출력
@@ -322,11 +324,13 @@ const markerLatobj = {
 function addMarker(){
     kakao.maps.event.addListener(map, 'click', makeMarker);
     stopBtn.classList.remove(STOPBTN_LS);
+    // mapShadow.classList.add(MAPSHADOW_LS);
 }
 
 function stopAdd(){
     kakao.maps.event.removeListener(map, 'click', makeMarker);
     stopBtn.classList.add(STOPBTN_LS);
+    // mapShadow.classList.remove(MAPSHADOW_LS);
 }
 
 function saveMarkerLat(){
