@@ -75,10 +75,10 @@
 .contentBox{
   position:absolute;
   z-index: 2;
-  /* width:70%; height:70vh;
+  width:500px; height:500px;
   left: 100px; top: 50px;
   background-color: #dcdde1;
-  display: none; */
+  /* display: none; */
 }
 #addimg{
   position:absolute;
@@ -129,7 +129,7 @@
 
 .contentBox .upload-thumb-wrap{
   display: inline-block;
-  width: 54px;
+  width: 450px;
   padding: 2px;
   vertical-align: middle;
   border: 1px solid #ddd;
@@ -141,7 +141,7 @@
   display: block;
   max-width: 100%;
   width: 100% \ 9;
-  height: auto;
+  height: 100% \ 9;
 }
 
 .ir_su {overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;} /* 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때 */ 
