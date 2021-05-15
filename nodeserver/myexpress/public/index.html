@@ -32,10 +32,14 @@
 		<i class="fa fa-times-circle" aria-hidden="true"></i>
 		<span class="ir_su">마커추가 그만하기</span>
 	</a>
-	<form id="addimg" method="POST" enctype="multipart/form-data" action="/upload_page">
-		<input type="file" name="MarkerIMG" multiple/> <br></br>
-		<input type="submit" value="보내기">
-	</form>
+	<div class="contentBox">
+		<form id="addimg" method="POST" enctype="multipart/form-data" action="/upload_page">
+			<input class="upload-name" value="파일선택" disabled="disabled">
+			<label for="ex_file">업로드</label>
+			<input type="file" name="MarkerIMG" id="ex_file" class="upload-hidden"/> </br>
+			<input type="submit" value="보내기">
+		</form>
+	</div>
 	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d9355f267cb6b45d2ef37bfcfa4f4a02"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascripts/map.js"></script>

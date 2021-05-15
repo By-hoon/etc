@@ -17,7 +17,7 @@ router.get('/', (req, res, next) =>{
   res.render('index')
 });
 
-router.post('/upload_page', uploader.array('MarkerIMG'), (req,res,next)=>{
+router.post('/upload_page', uploader.single('MarkerIMG'), (req,res,next)=>{
   console.log(req.files),
   console.log('파일 업로드'),
   res.redirect('/');

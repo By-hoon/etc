@@ -71,9 +71,77 @@
   display: none;
 }
 
+
+.contentBox{
+  position:absolute;
+  z-index: 2;
+  /* width:70%; height:70vh;
+  left: 100px; top: 50px;
+  background-color: #dcdde1;
+  display: none; */
+}
 #addimg{
   position:absolute;
   z-index: 2;
+}
+#addimg label { 
+  display: inline-block; 
+  padding: .5em .75em; 
+  color: #ffffff; 
+  font-size: inherit; line-height: normal; vertical-align: middle; 
+  background-color: #54a0ff; 
+  cursor: pointer; 
+  border: 2px solid #ffffff; border-radius: .25em; 
+}
+#addimg label:hover{
+  box-shadow: 
+  0 0 0 3px rgba(71, 154, 191, 0.1) inset,
+  0 0 0 100px rgba(0,0,0,0.1) inset;
+}
+#addimg input[type="file"] {
+   position: absolute; 
+   width: 1px; height: 1px; 
+   padding: 0; margin: -1px; 
+   overflow: hidden; clip:rect(0,0,0,0); border: 0; 
+}
+#addimg input[type="submit"] {
+  display: inline-block; 
+  padding: .5em .75em; 
+  color: #ffffff; 
+  font-size: inherit; line-height: normal; vertical-align: middle; 
+  background-color: #54a0ff; 
+  cursor: pointer; 
+  border: 2px solid #ffffff; border-radius: .25em; 
+}
+
+/* imaged preview */
+.contentBox .upload-display{
+  margin-bottom: 5px;
+}
+
+@media(min-width:768px){
+  .contentBox .upload-display{
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 0;
+  }
+}
+
+.contentBox .upload-thumb-wrap{
+  display: inline-block;
+  width: 54px;
+  padding: 2px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.contentBox .upload-display img{
+  display: block;
+  max-width: 100%;
+  width: 100% \ 9;
+  height: auto;
 }
 
 .ir_su {overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;} /* 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때 */ 
