@@ -261,6 +261,7 @@ function displayArea(area) {
 const stopBtn = document.querySelector(".stopBtn");
 const mapShadow = document.querySelector(".mapsh");
 const uploadPage = document.querySelector(".contentBox");
+
 let markerLat = [];
 
 const MARKERLAT_LS = 'markerLat'
@@ -270,7 +271,7 @@ const STOPBTN_LS = 'stop';
 
 //불러온 값으로 마커 출력
 function printMarker(lat, lng){
-    var imageSrc = './KakaoTalk_20200623_145500408.jpg', 
+    var imageSrc = './' + 'KakaoTalk_20200623_145500408.jpg', 
     imageSize = new kakao.maps.Size(20, 20), 
     imageOption = {offset: new kakao.maps.Point(10 , 20)}; 
 
