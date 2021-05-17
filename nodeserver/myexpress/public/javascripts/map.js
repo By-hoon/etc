@@ -281,7 +281,8 @@ var marker = new kakao.maps.Marker({
   position: markerPosition,
   image: markerImage 
 });
-marker.setMap(map);  
+marker.setMap(map);
+
 }
 
 //배열에 저장된 값 불러오기
@@ -300,7 +301,7 @@ function makeMarker(mouseEvent){
     uploadPage.classList.remove(UPLOADPAGE_LS);
     mapShadow.classList.add(MAPSHADOW_LS);
     var latlng = mouseEvent.latLng; 
-    var imageSrc = './KakaoTalk_20200623_145500408.jpg', // 마커이미지의 주소입니다    
+    var imageSrc = './' + 'KakaoTalk_20200623_145500408.jpg', // 마커이미지의 주소입니다    
     imageSize = new kakao.maps.Size(20, 20), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(10 , 20)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
