@@ -23,7 +23,10 @@
   top:50px; right:0px;
   bottom:0px;
   z-index: 2;
-  background-color: #dcdde1;
+  /* background-color: #dcdde1; */
+  box-shadow:   
+  0 0 0 0px rgba(71, 154, 191, 0.1) inset,
+  0 0 0 100px rgba(255, 255, 255, 0.774) inset;
 }
 
 .nav{
@@ -72,6 +75,7 @@
   box-shadow: 
   0 0 0 3px rgba(71, 154, 191, 0.1) inset,
   0 0 0 100px rgba(0,0,0,0.1) inset;
+  color:cornsilk;
 }
 
 .stopBtn{
@@ -88,18 +92,17 @@
   0 0 0 0px rgba(71, 154, 191, 0.1) inset,
   0 0 0 100px rgba(255, 255, 255, 0.774) inset;
 }
-.stop{
+.stop, .navhide, .mainbtnhide{
   display: none;
 }
-
 /* ----------------------------------------------------------------------------------- */
 /* 업로드 페이지 */
 
 .contentBox{
   position:absolute;
   z-index: 50;
-  width:1000px; height:500px;
-  left: 400px; top: 150px;
+  width:1500px; height:500px;
+  left: 200px; top: 150px;
   /* background-color: #f5f6fa; */
   overflow:hidden;
 }
@@ -119,7 +122,7 @@
 }
 #addimg label { 
   position: absolute;
-  right: 0;
+  left: 0;
   display: inline-block; 
   padding: .3em .45em; 
   color: #ffffff; 
@@ -151,7 +154,12 @@
   cursor: pointer; 
   border: 2px solid #40739e; border-radius: .25em; 
 }
-
+#story {
+  position: absolute;
+  left: 850px;
+  width: 450px;
+  height: 450px;
+}
 /* imaged preview */
 .contentBox .upload-display{
   margin-bottom: 5px;
@@ -167,9 +175,9 @@
 
 .contentBox .upload-thumb-wrap{
   position: absolute;
-  left: 300px;
+  left: 200px;
   display: inline-block;
-  width: 450px;
+  width: 550px;
   padding: 2px;
   vertical-align: middle;
 }

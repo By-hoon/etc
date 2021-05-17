@@ -3,18 +3,23 @@ const stopBtn = document.querySelector(".stopBtn");
 const mapShadow = document.querySelector(".mapsh");
 const uploadPage = document.querySelector(".contentBox");
 
+const mainBtn = document.querySelector(".menuBtn");
+const nav = document.querySelector("#nav");
+
 let markerLat = [];
 
-const MARKERLAT_LS = 'markerLat'
-const MAPSHADOW_LS = 'mapshadow'
-const UPLOADPAGE_LS = 'pageon'
-const STOPBTN_LS = 'stop';
+const MARKERLAT_LS = 'markerLat',
+    MAPSHADOW_LS = 'mapshadow',
+    UPLOADPAGE_LS = 'pageon',
+    STOPBTN_LS = 'stop',
+    NAV_LS = 'navhide',
+    MAINBTN_LS = 'mainbtnhide';
 
 //불러온 값으로 마커 출력
 function printMarker(lat, lng){
     var imageSrc = './' + 'KakaoTalk_20200623_145500408.jpg', 
     imageSize = new kakao.maps.Size(20, 20), 
-    imageOption = {offset: new kakao.maps.Point(10 , 20)}; 
+    imageOption = {}; 
 
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
     markerPosition = new kakao.maps.LatLng(lat, lng);
@@ -23,7 +28,10 @@ var marker = new kakao.maps.Marker({
   image: markerImage 
 });
 marker.setMap(map);
-
+//클릭이벤트
+kakao.maps.event.addListener(marker, 'click', function() {
+    
+});
 }
 
 //배열에 저장된 값 불러오기
@@ -69,14 +77,14 @@ const markerLatobj = {
 
 function addMarker(){
     kakao.maps.event.addListener(map, 'click', makeMarker);
-    stopBtn.classList.remove(STOPBTN_LS);
 }
 
 function stopAdd(){
     kakao.maps.event.removeListener(map, 'click', makeMarker);
     stopBtn.classList.add(STOPBTN_LS);
-    mapShadow.classList.remove(MAPSHADOW_LS);
     uploadPage.classList.add(UPLOADPAGE_LS);
+    mainBtn.classList.remove(MAINBTN_LS);
+    nav.classList.remove(NAV_LS);
 }
 
 function saveMarkerLat(){
@@ -85,6 +93,9 @@ function saveMarkerLat(){
 
 function addPage(){
     uploadPage.classList.remove(UPLOADPAGE_LS);
+    stopBtn.classList.remove(STOPBTN_LS);
+    mainBtn.classList.add(MAINBTN_LS);
+    nav.classList.add(NAV_LS);
 }
 
 function init(){
