@@ -98,6 +98,16 @@ function addPage(){
     nav.classList.add(NAV_LS);
 }
 
+function latAdd(){
+    uploadPage.classList.add(UPLOADPAGE_LS);
+    stopBtn.classList.add(STOPBTN_LS);
+    mainBtn.classList.add(MAINBTN_LS);
+    nav.classList.add(NAV_LS);
+    mapShadow.classList.remove(MAPSHADOW_LS);
+    map.setCursor('crosshair');
+    kakao.maps.event.addListener(map, 'click', makeMarker);
+}
+
 function init(){
     loadMarkers();
 }
