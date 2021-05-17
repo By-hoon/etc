@@ -17,7 +17,7 @@
 					<div>
 						<h3>마커 설정</h3>
 						<ol>
-							<li><a class="menuSubBtn" href="#" onclick= addMarker()>마커 추가</a></li>
+							<li><a class="menuSubBtn" href="#" onclick= addPage()>마커 추가</a></li>
 							<li><a class="menuSubBtn" href="#" >마커 수정</a></li>
 						</ol>
 					</div>
@@ -34,6 +34,7 @@
 		<span class="ir_su">마커추가 그만하기</span>
 	</a>
 	<div class="contentBox preview-image pageon">
+		<input type="button" value="위치선택" onclick="" id="Latbtn">
 		<form id="addimg" method="POST" enctype="multipart/form-data" action="/upload_page">
 			<label for="ex_file">업로드</label>
 			<input type="file" name="MarkerIMG" id="ex_file" class="upload-hidden"/> </br>
@@ -43,7 +44,7 @@
 	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d9355f267cb6b45d2ef37bfcfa4f4a02&libraries=services,clusterer,drawing"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascripts/map.js"></script>
-	<!-- <script type="text/javascript" src="marker.js"></script> -->
+	<script type="text/javascript" src="/javascripts/marker.js"></script>
 	<script type="text/javascript" src="/javascripts/menu.js"></script>
 	<script type="text/javascript" src="/javascripts/preview.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
