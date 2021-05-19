@@ -5,6 +5,7 @@ const uploadPage = document.querySelector(".contentBox");
 
 const mainBtn = document.querySelector(".menuBtn");
 const nav = document.querySelector("#nav");
+const addAddress = document.querySelector("#addAddress");
 
 let markerLat = [];
 
@@ -30,7 +31,6 @@ var marker = new kakao.maps.Marker({
 marker.setMap(map);
 //클릭이벤트
 kakao.maps.event.addListener(marker, 'click', function() {
-    
 });
 }
 
@@ -45,34 +45,30 @@ function loadMarkers(){
     }
 }   
 
+var callback = function(result, status) {
+    if (status === kakao.maps.services.Status.OK) {
+        addAddress.innerText = result[0].address_name;
+    }
+};
+
 //클릭 이벤트 마커 추가 부분
 function makeMarker(mouseEvent){
-    mapShadow.classList.add(MAPSHADOW_LS);
     var latlng = mouseEvent.latLng; 
-    var imageSrc = './' + 'KakaoTalk_20200623_145500408.jpg', // 마커이미지의 주소입니다    
-    imageSize = new kakao.maps.Size(20, 20), // 마커이미지의 크기입니다
-    imageOption = {offset: new kakao.maps.Point(10 , 20)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-
-// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-    markerPosition = new kakao.maps.LatLng(latlng.getLat(), latlng.getLng()); // 마커가 표시될 위치입니다
-
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({
-  position: markerPosition,
-  image: markerImage // 마커이미지 설정 
-});
-
-// 마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);  
-
+    var geoAddrees = new kakao.maps.services.Geocoder();
 //찍은 마커 정보 배열에 저장
-const markerLatobj = {
+    const markerLatobj = {
     lat : latlng.getLat(),
     lng : latlng.getLng()
-} ;
+    } ;
  markerLat.push(markerLatobj);
  saveMarkerLat();
+ kakao.maps.event.removeListener(map, 'click', makeMarker);
+ geoAddrees.coord2RegionCode(latlng.getLng(), latlng.getLat(), callback);
+ uploadPage.classList.remove(UPLOADPAGE_LS);
+ stopBtn.classList.remove(STOPBTN_LS);
+ mainBtn.classList.remove(MAINBTN_LS);
+ nav.classList.remove(NAV_LS);
+ mapShadow.classList.add(MAPSHADOW_LS); 
 }
 
 function addMarker(){
@@ -80,7 +76,6 @@ function addMarker(){
 }
 
 function stopAdd(){
-    kakao.maps.event.removeListener(map, 'click', makeMarker);
     stopBtn.classList.add(STOPBTN_LS);
     uploadPage.classList.add(UPLOADPAGE_LS);
     mainBtn.classList.remove(MAINBTN_LS);
@@ -103,9 +98,9 @@ function latAdd(){
     stopBtn.classList.add(STOPBTN_LS);
     mainBtn.classList.add(MAINBTN_LS);
     nav.classList.add(NAV_LS);
-    mapShadow.classList.remove(MAPSHADOW_LS);
+    mapShadow.classList.remove(MAPSHADOW_LS); 
     map.setCursor('crosshair');
-    kakao.maps.event.addListener(map, 'click', makeMarker);
+    addMarker();
 }
 
 function init(){

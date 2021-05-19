@@ -26,7 +26,7 @@
   /* background-color: #dcdde1; */
   box-shadow:   
   0 0 0 0px rgba(71, 154, 191, 0.1) inset,
-  0 0 0 100px rgba(255, 255, 255, 0.774) inset;
+  0 0 0 100px rgba(255, 255, 255, 0.692) inset;
 }
 
 .nav{
@@ -71,6 +71,11 @@
   0 0 0 3px rgba(71, 154, 191, 0.1) inset,
   0 0 0 100px rgba(0,0,0,0.1) inset;
 }
+
+#hidden-width{
+  width: 150px;
+}
+
 .stopBtn:hover,.menuBtn:hover{
   box-shadow: 
   0 0 0 3px rgba(71, 154, 191, 0.1) inset,
@@ -189,5 +194,14 @@
   /* width: 100% \ 9;
   height: 100% \ 9; */
 }
+#addAddress{
+  position: absolute;
+  color: #ffffff;
+  font-size: 18px;
+  left: 100px;
+  top: 6px;
+
+}
+
 
 .ir_su {overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;} /* 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때 */ 

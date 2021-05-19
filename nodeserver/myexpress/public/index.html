@@ -9,7 +9,7 @@
 <body>
 	<div id="map"></div>
 	<div class="mapsh"></div>
-	<nav id="nav">
+	<nav id="nav" class="">
 		<div class="container">
 			<div class ="row">
 				<div class="nav" style = "display: none;">
@@ -19,6 +19,7 @@
 						<ol>
 							<li><a class="menuSubBtn" href="#" onclick= addPage()>마커 추가</a></li>
 							<li><a class="menuSubBtn" href="#" >마커 수정</a></li>
+							<div id="hidden-width"></div>
 						</ol>
 					</div>
 				</div>
@@ -34,6 +35,7 @@
 		<span class="ir_su">마커추가 그만하기</span>
 	</a>
 	<div class="contentBox preview-image pageon">
+		<div id="addAddress"></div>
 		<input type="button" value="위치선택" onclick=latAdd() id="Latbtn">
 		<form id="addimg" method="POST" enctype="multipart/form-data" action="/upload_page">
 			<label for="ex_file">업로드</label>
