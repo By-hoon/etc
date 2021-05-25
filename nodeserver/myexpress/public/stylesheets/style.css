@@ -111,7 +111,7 @@
   /* background-color: #f5f6fa; */
   overflow:hidden;
 }
-.pageon{
+.pageon, .pageon2{
   display: none;
 }
 
@@ -200,6 +200,35 @@
   font-size: 18px;
   left: 100px;
   top: 5px;
+}
+
+.markerInfo{
+  position:absolute;
+  z-index: 50;
+  width:500px; height:850px;
+  right: 100px; top: 30px;
+  /* background-color: #f5f6fa; */
+  overflow:hidden;
+}
+.infoImage img{
+  position:absolute;
+  top: 30px;
+  width: 500px;
+  height: auto;
+}
+
+.infoText{
+  position:absolute;
+  left: 50px;
+  bottom: 300px;
+  width: 400px;
+  height: 100px;
+  padding: 5px;
+  box-shadow: 
+  0 0 0 3px rgba(169, 176, 179, 0.1) inset,
+  0 0 0 100px rgba(226, 221, 221, 0.1) inset;
+  font: bold;
+  color: ivory;
 }
 
 

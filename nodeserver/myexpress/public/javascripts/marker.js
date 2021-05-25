@@ -6,6 +6,7 @@ const uploadPage = document.querySelector(".contentBox");
 const mainBtn = document.querySelector(".menuBtn");
 const nav = document.querySelector("#nav");
 const addAddress = document.querySelector("#addAddress");
+const infoOn = document.querySelector(".markerInfo");
 
 let markerLat = [];
 
@@ -14,7 +15,8 @@ const MARKERLAT_LS = 'markerLat',
     UPLOADPAGE_LS = 'pageon',
     STOPBTN_LS = 'stop',
     NAV_LS = 'navhide',
-    MAINBTN_LS = 'mainbtnhide';
+    MAINBTN_LS = 'mainbtnhide',
+    INFOWINDOW_LS = 'pageon2';
 
 //불러온 값으로 마커 출력
 function printMarker(lat, lng){
@@ -29,8 +31,11 @@ var marker = new kakao.maps.Marker({
   image: markerImage 
 });
 marker.setMap(map);
+
 //클릭이벤트
 kakao.maps.event.addListener(marker, 'click', function() {
+    infoOn.classList.remove(INFOWINDOW_LS);
+    mapShadow.classList.add(MAPSHADOW_LS);
 });
 }
 
